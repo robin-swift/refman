@@ -1,0 +1,46 @@
+Embroidermodder House Style
+===========================
+
+These are rules for the general intended style of Embroidermodder's GUI source
+code. Not included are anything that a compiler will warn you about: fixing
+compiler warnings is more important than fixing style.
+
+NEW DEVELOPERS: if your patch to Embroidermodder doesn't follow these rules,
+don't worry about it. We only ask that your source code follow the basic rules
+in the developer training section. These rules are for sculpting Embroidermodder
+into a body of code that is resiliant to future bugs and reliable for users.
+
+Brevity
+-------
+
+Readable source code is short. Developers have finite time and becoming
+acquainted with more than 1000 lines of dense C code is often too high a bar
+for a new developer to a project. However, this leads to a bunch of tradeoffs
+that have caused issues and 
+
+1. 
+
+Rigidity Vs. Ease of Modification
+---------------------------------
+
+
+
+
+Devloper Prose
+--------------
+
+
+
+Macro Policy
+------------
+
+Macros are great, you can do all sorts with them. But it's easy to make readable
+short code that is really difficult to safely modify.
+
+Function Style
+--------------
+
+1. Don't write a new convenience function unless there are two
+   existing applications of it in the source code.
+2. 
+
