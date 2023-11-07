@@ -1,0 +1,163 @@
+%\documentclass[a4paper]{report}
+
+% Encoding goes first because it effects how other packages work
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Fonts
+\usepackage{courier}
+\usepackage{tgbonum}
+\usepackage{inconsolata}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{longtable}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xcolor}
+
+\DeclareUnicodeCharacter{0008}{ }
+
+\geometry{
+    margin=1.4in,
+    marginparwidth=0.8in
+}
+
+% Constants that are redefined
+\newcommand{\embversion}{2.0.0-alpha4}
+\newcommand{\version}{\embversion}
+\newcommand{\libembversion}{1.0.0-alpha}
+\newcommand{\publicationdate}{August 2023}
+
+% Marginalia
+\newcommand{\todo}[1]{\marginpar{\emph{TODO}\\{\footnotesize #1}}}
+
+\makeindex
+
+\title{Embroidermodder Reference Manual \embversion}
+\author{The Embroidermodder Team}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  language=C,
+  numbers=left,
+  extendedchars=true,
+%  commentstyle=\color{olivegreen},
+  title=\lstname,
+  frame=single
+}
+
+\hypersetup{
+  colorlinks=true,
+  breaklinks=true,
+  linkcolor=black,
+  filecolor=black,      
+  urlcolor=black,
+  citecolor=black
+}
+
+\begin{document}
+
+\begin{titlepage}
+
+\vspace*{8cm}
+
+\noindent\textbf{\Huge Embroidermodder}
+
+\vspace{10pt}
+
+\noindent\rule{\linewidth}{2pt}
+
+\vspace{10pt}
+
+\begin{flushright}
+\Large
+    Reference Manual
+
+\embversion
+
+\publicationdate
+\end{flushright}
+
+\vspace{6cm}
+
+\begin{flushleft}
+\Large
+\emph{The Embroidermodder Team}
+
+\vspace{10pt}
+
+\noindent\rule{\linewidth}{1pt}
+
+\end{flushleft}
+    
+\end{titlepage}
+
+
+\vspace*{8cm}
+
+\begin{quote}
+Copyright \copyright{} 2013-2023 The Embroidermodder Team.
+
+\url{https://www.libembroidery.org}
+
+The Embroidermodder Team consists of all contributors to our projects
+at \url{https://github.com/Embroidermodder}. A copy of the contributor
+list is in
+\ref{credits-for-embroidermodder-2-libembroidery-and-all-other-related-code}
+and maintained at \url{https://www.libembroidery.org/docs/credits}.
+
+\bigskip
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+A copy of the license is included in the section entitled ``GNU
+Free Documentation License''.
+\end{quote}
+
+\newpage
+
+\vspace*{8cm}
+
+\begin{center}
+    \emph{Dedicated to Jonathan Grieg}
+    
+    \vspace{1cm}
+    
+    \emph{Open source software is made by people who care about good tools and other people.}
+    
+    \vspace{1cm}
+    
+    \emph{You gave us so many ideas worth saving and we'll be working on, and sharing, your creations for some time.}
+    
+    \vspace{1cm}
+    
+    \emph{Rock on!}
+\end{center}
+    
+\newpage
+
+\tableofcontents
+
+\include{credits.tex}
+
+\include{content.tex}
+
+\bibliographystyle{plainnat}
+\bibliography{embroidermodder.bib}
+
+\appendix
+
+\include{fdl-1.3.tex}
+
+\printindex
+
+\end{document}
