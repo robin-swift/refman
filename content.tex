@@ -19,7 +19,7 @@
 
 \chapter{Introduction}
 
-Reference Manual {revnumber}. For
+Reference Manual. For
 Embroidermodder 2.0.0-alpha4, libembroidery 1.0.0-alpha, PET 1.0.0-alpha
 and EmbroideryMobile 1.0.0-alpha.
 
@@ -28,7 +28,7 @@ time you edit using `revision.sh`.
 
 Test these:
 
-----
+\begin{verbatim}
 sudo apt install latexml texlive-latex-base imagemagick info2man
 
 # For our command line tools:
@@ -42,9 +42,9 @@ texi2pdf embroider.texi
 # For online documentation:
 pandoc embroidermodder_refman.tex -f latex -t html -s -o emb_refman.html --bibliography embroidermodder.bib
 # Or latexml/latexmlpost
-----
+\end{verbatim}
 
-=== Command Language
+\subsection{Command Language}
 
 Printer Command Language (PCL), see \citet{packard1992pcl}.
 
@@ -53,43 +53,43 @@ Has commands like: "PU" Pen Up, "PR" Plot Relative, "EP" edge polygon.
 
 So commands read like this:
 
-----
+\begin{verbatim}
 PA40,10;
-----
+\end{verbatim}
 
-command argument seperator(`,`) argument terminator(`;`)
+command argument seperator(\texttt{,}) argument terminator(\texttt{;})
 
 Constructing new commands from old ones in the command language is less
 natural in the HP-GL/2 language, but a similar layer for us is
-the tajima DST format cite:[4] for existing printers and CNC commands for
-direct control... where'd we'd use G-Code cite:[7] and Linux CNC cite:[6].
+the tajima DST format \citep{4} for existing printers and CNC commands for
+direct control... where'd we'd use G-Code \citep{7} and Linux CNC \citep{6}.
 
 Could we `setpagedevice` to a printer in some cases and a similar CUPS service
 for embroidery machines in others?
 
-All systems are supported by ghostscript, when you account for homebrew %\citet{9}:
+All systems are supported by ghostscript, when you account for homebrew \citet{9}:
 
-----
+\begin{verbatim}
 brew update
 brew upgrade
 brew install ghostscript
 brew cleanup
-----
+\end{verbatim}
 
 Vector graphic logos don't require the SVG Qt library.
 
-=== Man Pages
+\subsection{Man Pages}
 
-We maintain a traditional manpage for `embroider` using
+We maintain a traditional manpage for \texttt{embroider} using
 the basic macros.
 
-=== Arduino
+\subsection{Arduino}
 
-----
+\begin{verbatim}
 apt-get install avr-libc gcc-avr uisp avrdude
-----
+\end{verbatim}
 
-== Libembroidery
+\section{Libembroidery}
 
 (Under construction, please wait for v1.0 release.)
 
@@ -109,7 +109,7 @@ It also includes a CLI called `embroider` that allows for better automation of
 changes to embroidery files and will be more up-to date than
 the Embroidermodder 2 GUI.
 
-=== Documentation
+\subsection{Documentation}
 
 Libembroidery is documented as part of this reference manual. If you need
 libembroidery for any non-trivial usage or want to contribute to the library we
@@ -126,12 +126,12 @@ starting with:
 $ embroider --help
 ----
 
-=== License
+\subsection{License}
 
 Libembroidery is distributed under the permissive zlib licence, see the LICENCE
 file.
 
-=== Demos
+\section{Demos}
 
 We're currently trying out some fill techniques which will be demonstrated here
 and in the script `qa_test.sh`.
@@ -144,61 +144,63 @@ Converts to:
 // center and caption
 image:images/examples/crossstitch_logo.png[crossstitch logo]
 
-==== Build
+\subsection{Build}
 
 libembroidery and EmbroiderModder 2 use CMake builds
 so if you are building the project to use as a library we recommend
 you run:
 
-----
+\begin{verbatim}
 git clone https://github.com/Embroidermodder/libembroidery
 cd libembroidery
 cmake .
 cmake --build .
 cmake --install .
-----
+\end{verbatim}
 
 This builds both the static and shared versions of the library as well
 as the command line program `embroider`.
 
-cite:[packard1992pcl]
-cite:[linuxcncsrc]
-cite:[linuxcnc]
-cite:[adobe1990postscript]
-cite:[postscript1999postscript]
-cite:[eduTechDST]
-cite:[cups]
-cite:[millOperatorsManual]
-cite:[oberg1914machinery]
-cite:[dxf_reference]
-cite:[embroidermodder_source_code]
-cite:[libembroidery_source_code]
-cite:[acatina]
-cite:[kde_tajima]
-cite:[wotsit_archive]
-cite:[wotsit_siterip]
-cite:[fineemb_dst]
-cite:[edutechwiki_dst]
+\cite:[packard1992pcl]
+\cite:[linuxcncsrc]
+\cite:[linuxcnc]
+\cite:[adobe1990postscript]
+\cite:[postscript1999postscript]
+\cite:[eduTechDST]
+\cite:[cups]
+\cite:[millOperatorsManual]
+\cite:[oberg1914machinery]
+\cite:[dxf_reference]
+\cite:[embroidermodder_source_code]
+\cite:[libembroidery_source_code]
+\cite:[acatina]
+\cite:[kde_tajima]
+\cite:[wotsit_archive]
+\cite:[wotsit_siterip]
+\cite:[fineemb_dst]
+\cite:[edutechwiki_dst]
 
-== Graphical User Interface for PC
+\section{Graphical User Interface for PC}
 \ref{GUI}
 
-=== Overview
+\subsection{Overview}
 
 (_UNDER MAJOR RESTRUCTURING, PLEASE WAIT FOR VERSION 2_)
 
-https://www.libembroidery.org[]
+\url{https://www.libembroidery.org}
 
 Embroidermodder is a free machine embroidery application.
 The newest version, Embroidermodder 2 can:
 
-* edit and create embroidery designs
-* estimate the amount of thread and machine time needed to stitch a design
-* convert embroidery files to a variety of formats
-* upscale or downscale designs
-* run on Windows, Mac and Linux
+\begin{itemize}
+\item edit and create embroidery designs
+\item estimate the amount of thread and machine time needed to stitch a design
+\item convert embroidery files to a variety of formats
+\item upscale or downscale designs
+\item run on Windows, Mac and Linux
+\end{itemize}
 
-_Embroidermodder 2_ is very much a work in progress since we're doing a ground
+\emph{Embroidermodder 2} is very much a work in progress since we're doing a ground
 up rewrite to an interface in C using the GUI toolkit SDL2.
 The reasoning for this is detailed in the issues tab.
 
@@ -214,7 +216,7 @@ News (https://opencollective.com/embroidermodder[]).
 This current printer-friendly version
 is here (https://www.libembroidery.org/EM2.0.0-alpha_refman_a4.pdf[]).
 
-=== License
+\subsection{License}
 
 The source code is under the terms of the zlib license: see `LICENSE.md`
 in the source code directory.
@@ -226,7 +228,7 @@ with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
 
 A copy of the license is included in Section~\ref{GNU-free-documentation-license}.
 
-== The Embroidermodder Project and Team
+\section{The Embroidermodder Project and Team}
 
 The _Embroidermodder 2_ project is a collection of small software
 utilities for manipulating, converting and creating embroidery files in all
@@ -235,16 +237,18 @@ is a larger graphical user interface (GUI) which is at the heart of the project.
 
 The tools and associated documents are:
 
-* The website https://www.libembroidery.org[]
-* This reference manual covering the development of all these projects with the current version available here: https://www.libembroidery.org/embroidermodder_2.0_manual.pdf[]
-* The GUI _Embroidermodder 2_ covered in Chapter~\ref{GUI}.
-* The core library of low-level functions: `libembroidery`, covered in Chapter~\ref{libembroidery}
-* The CLI `embroider`, which is part of libembroidery
-* Mobile embroidery format viewers and tools convered in Chapter~\ref{Mobile}.
-* Specs for an open source hardware embroidery machine extension called the Portable Embroidery Tool (PET) which is also part of libembroidery. See Chapter~\ref{PET}.
+\begin{itemize}
+\item The website https://www.libembroidery.org[]
+\item This reference manual covering the development of all these projects with the current version available here: https://www.libembroidery.org/embroidermodder_2.0_manual.pdf[]
+\item The GUI _Embroidermodder 2_ covered in Chapter~\ref{GUI}.
+\item The core library of low-level functions: `libembroidery`, covered in Chapter~\ref{libembroidery}
+\item The CLI `embroider`, which is part of libembroidery
+\item Mobile embroidery format viewers and tools convered in Chapter~\ref{Mobile}.
+\item Specs for an open source hardware embroidery machine extension called the Portable Embroidery Tool (PET) which is also part of libembroidery. See Chapter~\ref{PET}.
+\end{itemize}
 
 The website, this manual and some scripts to construct the distribution are
-maintained in cite:[embroidermodder_website].
+maintained in \citep{embroidermodder_website}.
 
 They all tools to make the standard
 user experience of working with an embroidery machine better without expensive
@@ -265,20 +269,24 @@ patches, artwork and documentation to our three projects.
 The team was established by Jonathan Greig and Josh Varga.
 The full list is actively maintained below.
 
-=== Core Development Team
+\subsection{Core Development Team}
 
 Embroidermodder 2:
 
-* Jonathan Greig (https://github.com/redteam316)
-* Josh Varga (https://github.com/JoshVarga)
-* Robin Swift (https://github.com/robin-swift)
+\begin{itemize}
+\item Jonathan Greig (\url{https://github.com/redteam316})
+\item Josh Varga (\url{https://github.com/JoshVarga})
+\item Robin Swift (\url{https://github.com/robin-swift})
+\end{itemize}
 
 Embroidermodder 1:
 
-* Josh Varga (https://github.com/JoshVarga)
-* Mark Pontius (http://sourceforge.net/u/mpontius/profile)
+\begin{itemize}
+\item Josh Varga (https://github.com/JoshVarga)
+\item Mark Pontius (http://sourceforge.net/u/mpontius/profile)
+\end{itemize}
 
-== Credits for Embroidermodder 2, libembroidery and all other related code
+\section{Credits for Embroidermodder 2, libembroidery and all other related code}
 
 If you have contributed and wish to be added to this list, alter the  README on Embroidermodder
 github page (https://github.com/Embroidermodder/Embroidermodder) and we'll copy it to the
@@ -400,22 +408,22 @@ An Embroidermodder 2 command excerpt:
 
 image::images/features-scripting-1.png[scripting screenshot]
 
-=== Build and Install}
+\subsection{Build and Install}
 
 Assuming you already have the SDL2 libraries you can proceed to using the fast build, which
 assumes you want to build and test locally.
 
 The fast build should be:
 
-----
+\begin{verbatim}
 bash build.sh
-----
+\end{verbatim}
 
 or, on Windows:
 
-----
+\begin{verbatim}
 .\build.bat
-----
+\end{verbatim}
 
 Then run using the `run.bat` or `run.sh` scripts in the build/ directory.
 
