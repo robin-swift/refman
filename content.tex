@@ -3,19 +3,19 @@
 %:author: The Embroidermodder Team
 %:email: embroidermodder@gmail.com
 %:description: Reference Manual for the technical details of all of the Embroidermodder Projects
-%:url-repo: https://github.com/embroidermodder/www.libembroidery.org
+%:url-repo: \url{https://github.com/embroidermodder/www.libembroidery.org}
 %:toc: left
 %:toclevels: 2
 %:bibtex-file: references.bib
 %:bibtex-style: apa
 %:bibtex-order: alphabetical
 
-%include:revision.adoc[]
+%include:revision.adoc}
 
 %// Only display the menu on the website.
-%ifeval::["{backend}" == "html5"]
-%include::menu.adoc[]
-%endif::[]
+%ifeval{["{backend}" == "html5"}
+%include{menu.adoc}
+%endif{}
 
 \chapter{Introduction}
 
@@ -48,7 +48,7 @@ pandoc embroidermodder_refman.tex -f latex -t html -s -o emb_refman.html --bibli
 
 Printer Command Language (PCL), see \citet{packard1992pcl}.
 
-HP-GL/2 Vector Graphics  indexterm:[HP-GL/2] described in \citet{packard1992pcl}.
+HP-GL/2 Vector Graphics  index{HP-GL/2} described in \citet{packard1992pcl}.
 Has commands like: "PU" Pen Up, "PR" Plot Relative, "EP" edge polygon.
 
 So commands read like this:
@@ -100,7 +100,7 @@ for open source machine embroidery.
 Libembroidery is the underlying library that is used by Embroidermodder 2
 and is developed by  The Embroidermodder Team \ref{the-embroidermodder-team}.
 A full list of contributors to the project is maintained in
-https://github.com/Embroidermodder/embroidermodder[] the Embroidermodder 2 github
+https://github.com/Embroidermodder/embroidermodder} the Embroidermodder 2 github
 in the file `CREDITS.md`.
 It handles over 45 different embroidery specific formats as well
 as several non-embroidery specific vector formats.
@@ -116,7 +116,7 @@ libembroidery for any non-trivial usage or want to contribute to the library we
 advise you read the appropriate design sections of the manual first. Copies of
 this manual will be shipped with the packaged version of libembroidery, but to
 build it we use the Doxyfile in
-https://github.com/Embroidermodder/embroidermodder[] the Embroidermodder git
+https://github.com/Embroidermodder/embroidermodder} the Embroidermodder git
 repository.
 
 For more basic usage, `embroider` should have some in-built help
@@ -137,12 +137,12 @@ We're currently trying out some fill techniques which will be demonstrated here
 and in the script `qa_test.sh`.
 
 // center and caption
-image::images/examples/logo.png[the logo]
+image{images/examples/logo.png[the logo}
 
 Converts to:
 
 // center and caption
-image:images/examples/crossstitch_logo.png[crossstitch logo]
+image:images/examples/crossstitch_logo.png[crossstitch logo}
 
 \subsection{Build}
 
@@ -161,24 +161,24 @@ cmake --install .
 This builds both the static and shared versions of the library as well
 as the command line program `embroider`.
 
-\citep[packard1992pcl]
-\citep[linuxcncsrc]
-\citep[linuxcnc]
-\citep[adobe1990postscript]
-\citep[postscript1999postscript]
-\citep[eduTechDST]
-\citep[cups]
-\citep[millOperatorsManual]
-\citep[oberg1914machinery]
-\citep[dxf_reference]
-\citep[embroidermodder_source_code]
-\citep[libembroidery_source_code]
-\citep[acatina]
-\citep[kde_tajima]
-\citep[wotsit_archive]
-\citep[wotsit_siterip]
-\citep[fineemb_dst]
-\citep[edutechwiki_dst]
+\citep{packard1992pcl}
+\citep{linuxcncsrc}
+\citep{linuxcnc}
+\citep{adobe1990postscript}
+\citep{postscript1999postscript}
+\citep{eduTechDST}
+\citep{cups}
+\citep{millOperatorsManual}
+\citep{oberg1914machinery}
+\citep{dxf_reference}
+\citep{embroidermodder_source_code}
+\citep{libembroidery_source_code}
+\citep{acatina}
+\citep{kde_tajima}
+\citep{wotsit_archive}
+\citep{wotsit_siterip}
+\citep{fineemb_dst}
+\citep{edutechwiki_dst}
 
 \section{Graphical User Interface for PC}
 \ref{GUI}
@@ -205,16 +205,16 @@ up rewrite to an interface in C using the GUI toolkit SDL2.
 The reasoning for this is detailed in the issues tab.
 
 For a more in-depth look at what we are developing read our
-website (https://www.libembroidery.org[]) which includes these docs as well
+website (https://www.libembroidery.org}) which includes these docs as well
 as the up-to date printer-friendly versions. These discuss recent changes,
 plans and has user and developer guides for all the Embroidermodder projects.
 
 To see what we're focussing on right now, see the Open Collective
-News (https://opencollective.com/embroidermodder[]).
+News (https://opencollective.com/embroidermodder}).
 
 // fixme
 This current printer-friendly version
-is here (https://www.libembroidery.org/EM2.0.0-alpha_refman_a4.pdf[]).
+is here (https://www.libembroidery.org/EM2.0.0-alpha_refman_a4.pdf}).
 
 \subsection{License}
 
@@ -238,13 +238,18 @@ is a larger graphical user interface (GUI) which is at the heart of the project.
 The tools and associated documents are:
 
 \begin{itemize}
-\item The website https://www.libembroidery.org[]
-\item This reference manual covering the development of all these projects with the current version available here: https://www.libembroidery.org/embroidermodder_2.0_manual.pdf[]
+\item The website \url{https://www.libembroidery.org}
+\item This reference manual covering the development of all these projects with
+the current version available here:
+\url{https://www.libembroidery.org/embroidermodder_2.0_manual.pdf}
 \item The GUI _Embroidermodder 2_ covered in Chapter~\ref{GUI}.
-\item The core library of low-level functions: `libembroidery`, covered in Chapter~\ref{libembroidery}
+\item The core library of low-level functions: `libembroidery`, covered in
+Chapter~\ref{libembroidery}
 \item The CLI `embroider`, which is part of libembroidery
 \item Mobile embroidery format viewers and tools convered in Chapter~\ref{Mobile}.
-\item Specs for an open source hardware embroidery machine extension called the Portable Embroidery Tool (PET) which is also part of libembroidery. See Chapter~\ref{PET}.
+\item Specs for an open source hardware embroidery machine extension called
+the Portable Embroidery Tool (PET) which is also part of libembroidery. See
+Chapter~\ref{PET}.
 \end{itemize}
 
 The website, this manual and some scripts to construct the distribution are
@@ -259,7 +264,7 @@ bedrooms.
 
 Embroidermodder 2 is licensed under the zlib license and we aim to keep all of our tools open
 source and free of charge. If you would like to support the project check out our  Open
-Collective (https://opencollective.com/embroidermodder[]) group.
+Collective (https://opencollective.com/embroidermodder}) group.
 If you would like to help,
 please join us on GitHub. This document is written as developer training as well helping new
 users (see the last sections) so this is the place to learn how to start changing the code.
@@ -327,11 +332,11 @@ A summary of these features:
 If you use multiple operating systems, it's important to choose software that works on all of them.
 
 Embroidermodder 2 runs on Windows, Linux and Mac OS X. Let's not forget the  Raspberry
-Pi (https://www.raspberrypi.org[]).
+Pi (https://www.raspberrypi.org}).
 
-// [#running-different-platforms]
+// [#running-different-platforms}
 .Running on different platforms.
-image:features-platforms-1.png[Running on different platforms]
+image:features-platforms-1.png[Running on different platforms}
 
 \subsection{Realistic Rendering}
 
@@ -339,11 +344,11 @@ It is important to be able to visualize what a design will look like when stitch
 pseudo ``3D'' realistic rendering helps achieve this
 (see Figure~\ref{real-render}).
 
-// [#fig-real-render]
+// [#fig-real-render}
 .Real render examples.
-image:features-realrender-1.png[]
-image:features-realrender-2.png[]
-image:features-realrender-3.png[]
+image:features-realrender-1.png}
+image:features-realrender-2.png}
+image:features-realrender-3.png}
 
 \subsection{Various grid types and auto-adjusting rulers}
 
@@ -354,9 +359,9 @@ Use rectangular, circular or isometric grids to construct your masterpiece!
 
 Multiple grids and rulers in action Figure ref fig grid-ruler.
 
-// [#fig-grid-ruler]
+// [#fig-grid-ruler}
 .Grid and ruler examples.
-image::features-grid-ruler-1.png[]
+image{features-grid-ruler-1.png}
 
 \subsection{Many measurement tools}
 
@@ -367,7 +372,7 @@ locate individual points or find distances between any 2 points anywhere in the 
 
 Take quick and accurate measurements:
 
-image::images/features-measure-1.png[]
+image{images/features-measure-1.png}
 
 \subsection{Add text to any design}
 
@@ -378,7 +383,7 @@ with the property editor.
 
 Add text and adjust its properties quickly:
 
-image::images/features-text-1.png[]
+image{images/features-text-1.png}
 
 \subsection{Supports many formats}
 
@@ -395,7 +400,7 @@ line utility which supports batch file conversion.
 
 There are a multitude of formats to choose from:
 
-image::images/features-formats-1.png[features formats]
+image{images/features-formats-1.png[features formats}
 
 \subsection{Scripting API}
 
@@ -408,7 +413,7 @@ us (contact.html) and we will review it for functionality, bugs, and finally inc
 
 An Embroidermodder 2 command excerpt:
 
-image::images/features-scripting-1.png[scripting screenshot]
+image{images/features-scripting-1.png[scripting screenshot}
 
 \subsection{Build and Install}
 
@@ -469,11 +474,11 @@ It is currently in active development and will run on GNU/Linux, Mac OS X, Micro
 
 All Embroidermodder downloads (downloads.html) are hosted on SourceForge.
 
-The source code for Embroidermodder 1 (http://sourceforge.net/p/embroidermodder/code/HEAD/tree/embroidermodder1[]) has always been hosted on Sourceforge.
+The source code for Embroidermodder 1 (http://sourceforge.net/p/embroidermodder/code/HEAD/tree/embroidermodder1}) has always been hosted on Sourceforge.
 
-The source code for Embroidermodder 2 (https://github.com/Embroidermodder/Embroidermodder[]) was moved to GitHub on July 18, 2013.
+The source code for Embroidermodder 2 (https://github.com/Embroidermodder/Embroidermodder}) was moved to GitHub on July 18, 2013.
 
-The website for Embroidermodder (https://github.com/Embroidermodder/www.libembroidery.org[]) was moved to GitHub on September 9, 2013.
+The website for Embroidermodder (https://github.com/Embroidermodder/www.libembroidery.org}) was moved to GitHub on September 9, 2013.
 
 \chapter{Contact us}
 
@@ -509,8 +514,8 @@ printed docs in this file.
 \subsection{Development}
 
 If you wish to develop with us you can chat via the contact email on the
-website (https://www.libembroidery.org[]) or in the issues tab on the
-github page (https://github.com/Embroidermodder/Embroidermodder/issues[]).
+website (https://www.libembroidery.org}) or in the issues tab on the
+github page (https://github.com/Embroidermodder/Embroidermodder/issues}).
 People have been polite and friendly in these conversations and I (Robin) have
 really enjoyed them. If we do have any arguments please note we have a Code of
 Conduct (`CODE_OF_CONDUCT.md`) so there is a consistent policy to enforce when
@@ -702,8 +707,8 @@ Only do this once per minor version number.
 * PEP7 compliance.
 * Better documentation with more photos/screencaps.
 
-\subsection{Full Test Suite
-indexterm:[testing]
+\subsection{Full Test Suite}
+\index{testing}
 
 (This needs a hook from Embroidermodder to embroider's full test suite.)
 
@@ -719,7 +724,7 @@ Sacrificing one critera for another would require some design work
 before we would consider it.)
 
 \subsection{Symbols
-indexterm:[symbols]
+index[symbols}
 
 Symbols use the SVG path syntax.
 
@@ -732,7 +737,7 @@ save on repeated work overall.
 \section{Features
 
 \subsection{Bindings
-indexterm:[bindings]
+index[bindings}
 
 Bindings for libembroidery are maintained for the languages we use internally
 in the project, for other languages we consider that the responsibility of
@@ -742,23 +747,23 @@ So libembroidery is going to be supported on:
 
 * `C` (by default)
 * `C++` (also by default)
-* `Java` (for the indexterm2:[Android] application MobileViewer)
-* `Swift` (for the indexterm2:[iOS] application iMobileViewer)
+* `Java` (for the \index{Android] application MobileViewer)
+* `Swift` (for the \index{iOS] application iMobileViewer)
 
-For `C\#` indexterm:[C-sharp] we recommend directly calling the function directly
+For `C\#` index[C-sharp] we recommend directly calling the function directly
 using the DllImport feature:
 
 ----
 /* Calling readCsv() via C# as a native function. */
-[DllImport("libembroidery.so", EntryPoint="readCsv")]
+[DllImport("libembroidery.so", EntryPoint="readCsv")}
 ----
 
-see this StackOverflow discussion for help: https://stackoverflow.com/questions/11425202/is-it-possible-to-call-a-c-function-from-c-net[].
+see this StackOverflow discussion for help: https://stackoverflow.com/questions/11425202/is-it-possible-to-call-a-c-function-from-c-net}.
 
-For Python you can do the same using ctypes: https://www.geeksforgeeks.org/how-to-call-a-c-function-in-python/[].
+For Python you can do the same using ctypes: https://www.geeksforgeeks.org/how-to-call-a-c-function-in-python/}.
 
 \subsection{Other Supported Thread Brands
-indexterm:[supported threads]
+index[supported threads}
 
 The thread lists that aren't preprogrammed into formats but are indexed in
 the data file for the purpose of conversion or fitting to images/graphics.
@@ -788,7 +793,7 @@ the data file for the purpose of conversion or fitting to images/graphics.
 * Z102 Isacord Polyester
 
 \section{GUI Design
-indexterm:[GUI]
+index[GUI}
 
 Embroidermodder 2 was written in C++/Qt5 and it was far too complex. We had issues with people
 not able to build from source because the Qt5 libraries were so ungainly. So I decided to do a
@@ -816,22 +821,27 @@ key parts of the main struct in the undo history (an unsolved problem because
 we need to decide how much data to copy over per action). This means undo,
 redo and repeat actions can refer to this data.
 
-\section{To Do
+\section{To Do}
 
 These should be sorted into relevant code sections.
 
-* todo sort todo list.
-* Alpha: High priority
-** Statistics from 1.0, needs histogram
-** Saving DST/PES/JEF (varga)
-** Saving CSV/SVG (rt) + CSV read/write UNKNOWN interpreted as COLOR bug
-* Alpha: medium priority
-** Notify user of data loss if not saving to an object format.
-** Import Raster Image
-** SNAP/ORTHO/POLAR
-** Layer Manager + LayerSwitcher DockWidget
-** Reading DXF
-* Alpha: low priority
+\begin{itemize}
+\item todo sort todo list.
+\item Alpha: High priority
+\begin{itemize}
+\item Statistics from 1.0, needs histogram
+\item Saving DST/PES/JEF (varga)
+\item Saving CSV/SVG (rt) + CSV read/write UNKNOWN interpreted as COLOR bug
+\end{itemize}
+\item Alpha: medium priority
+\begin{itemize}
+\item Notify user of data loss if not saving to an object format.
+\item Import Raster Image
+\item SNAP/ORTHO/POLAR
+\item Layer Manager + LayerSwitcher DockWidget
+\item Reading DXF
+\end{itemize}
+\item Alpha: low priority
 ** Writing DXF
 ** Up and Down keys cycle thru commands in the command prompt
 ** Amount of Thread, Machine Time Estimation (also allow customizable times for setup, color changes, manually
@@ -998,10 +1008,11 @@ widget within the program that's searchable.
 ** Settings dialog: notify when the user is switching tabs that the
 setting has been changed, adding apply button is what would make sense for
 this to happen.
+\end{itemize}
 
-\section{Contributing
+\section{Contributing}
 
-\subsection{Version Control
+\subsection{Version Control}
 
 Being an open source project, developers can grab the latest code at any time
 and attempt to build it themselves. We try our best to ensure that it will build smoothly
@@ -1013,25 +1024,31 @@ Try to group commits based on what they are related to: features/bugs/comments/g
 
 See the coding style  here (coding-style).
 
-\subsection{Get the Development Build going
+\subsection{Get the Development Build going}
 
 When we switch to releases we recommend using them, unless you're reporting a bug in which case you can check the development build for whether it has been patched. If this applies to you, the current development build is https://github.com/Embroidermodder/Embroidermodder/releases/tag/alpha3[here].
 
-\subsection{To Do 
+\subsection{To Do}
 
-* Beta
-** Libembroidery 1.0.
-** Better integrated help: I don't think the help should backend to a html file somewhere on the user's system. A better system would be a custom widget within the program that's searchable.
-** EmbroideryFLOSS - Color picker that displays catalog numbers and names.
-** Custom filter bug -- doesn't save changes in some cases.
-** Advanced printing.
-** Stitching simulation.
-* 2.x/ideas
-** User designed custom fill.
+\begin{itemize}
+\item Beta
+\begin{itemize}
+\item Libembroidery 1.0.
+\item Better integrated help: I don't think the help should backend to a html file somewhere on the user's system. A better system would be a custom widget within the program that's searchable.
+\item EmbroideryFLOSS - Color picker that displays catalog numbers and names.
+\item Custom filter bug -- doesn't save changes in some cases.
+\item Advanced printing.
+\item Stitching simulation.
+\end{itemize}
+\item 2.x/ideas
+\begin{itemize}
+\item User designed custom fill.
+\end{itemize}
+\end{itemize}
 
 These are key bits of reasoning behind why the GUI is built the way it is.
 
-\section{Translation of the user interface
+\section{Translation of the user interface}
 
 In a given table the left column is the default symbol and the right string is the translation.
 If the translate function fails to find a translation it returns the default symbol.
@@ -1039,9 +1056,11 @@ If the translate function fails to find a translation it returns the default sym
 So in US English it is an empty table, but in UK English
 only the dialectical differences are present.
 
-Ideally, we should support at least the 6 languages spoken at the UN. Quoting https://www.un.org[]
+Ideally, we should support at least the 6 languages spoken at the UN. Quoting \url{https://www.un.org}
 
-> _There are six official languages of the UN. These are Arabic, Chinese, English, French, Russian and Spanish._
+\begin{quote}
+\emph{There are six official languages of the UN. These are Arabic, Chinese, English, French, Russian and Spanish.}
+\end{quote}
 
 We're adding Hindi, on the grounds that it is one of the most commonly spoken languages and at
 least one of the Indian languages should be present.
@@ -1060,7 +1079,7 @@ of the internals of the software. Practically, this is
 just US English, but in terms of programming history this
 is the "C locale".
 
-\section{Old action system notes
+\section{Old action system notes}
 
 Action: the basic system to encode all user input.
 
@@ -1068,22 +1087,22 @@ This typedef gives structure to the data associated with each action
 which, in the code, is referred to by the action id (an int from
 the define table above).
 
-\section{DESCRIPTION OF STRUCT CONTENTS
+\section{DESCRIPTION OF STRUCT CONTENTS}
 
-\subsection{label
+\subsection{label}
 
 The action label is always in US English, lowercase,
 seperated with hyphens.
 
-For example: `new-file`.
+For example: \texttt{new-file}.
 
-\section{Flags
+\section{Flags}
 
 The bit based flags all collected into a 32-bit integer.
 
 label{tab:flags-for-actions}
-[cols="1,6",title="Flags of EM actions"]
-|====
+[cols="1,6",title="Flags of EM actions"}
+\begin{tabular}{l l l}
 |bit(s)
 |description
 
@@ -1101,13 +1120,11 @@ label{tab:flags-for-actions}
 
 |11-12
 |What
-|====
-
-\section{Description
+\end{tabular}\section{Description}
 
 The string placed in the tooltip describing the action.
 
-\section{Original Prompt System
+\section{Original Prompt System}
 
 NOTE: `main()` is run every time the command is started.
 Use it to reset variables so they are ready to go.
@@ -1126,272 +1143,270 @@ NOTE: `prompt()` is run when Enter is pressed.
 is called so calling it is only needed for erroneous input.
 Any text in the command prompt is sent as an uppercase string.
 
-\section{CAD command review
+\section{CAD command review}
 
-[cols="1,1,1,6"]
-|====
+[cols="1,1,1,6"}
+\begin{tabular}{l l l}
 | **ID**
 | **name**
 | **arguments**
 | **description**
 
 | 0
-| indexterm2:[`newfile`]
+| \index{\texttt{newfile}}
 | none
 | Create a new EmbPattern with a new tab in the GUI.
 
 |1
-|indexterm2:[`openfile`]
+|\index{\texttt{openfile}}
 |filename string
 |Open an EmbPattern with the supplied filename `fname`.
 
 |2
-|indexterm2:[`savefile`]
+|\index{\texttt{savefile}}
 |filename string
 |Save the current loaded EmbPattern to the supplied filname `fname`.
 
 |3
-|indexterm2:[`scale`]
+|\index{\texttt{scale}}
 |selected objects, 1 float
 |Scale all selected objects by the number supplied, without selection scales the entire design.
 
 |4
-|indexterm2:[`circle`]
+|\index{\texttt{circle}}
 |mouse co-ords
 |Adds a circle to the design based on the supplied numbers, converts to stitches on save for stitch only formats.
 
 |5
-|indexterm2:[`offset`]
+|\index{\texttt{offset}}
 |mouse co-ords
 |Shifts the selected objects by the amount given by the mouse co-ordinates.
 
 |6
-|indexterm2:[`extend`]
+|\index{\texttt{extend}}
 |
 |
 
 |7
-|indexterm2:[`trim`]
+|\index{\texttt{trim}}
 |
 |
 
 |8
-|indexterm2:[`break_at_point`]
+|\index{\texttt{break_at_point}}
 |
 |
 
 |9
-|indexterm2:[`break_2_points`]
+|\index{\texttt{break_2_points}}
 |
 |
 
 |10
-|indexterm2:[`fillet`]
+|\index{\texttt{fillet}}
 |
 |
 
 |11
-|indexterm2:[`star`]
+|\index{\texttt{star}}
 |
 |
 
 |12
-|indexterm2:[`singlelinetext`]
+|\index{\texttt{singlelinetext}}
 |
 |
 
 |13
-|indexterm2:[`chamfer`]
+|\index{\texttt{chamfer}}
 |
 |
 
 |14
-|indexterm2:[`split`]
+|\index{\texttt{split}}
 |
 |
 
 |15
-|indexterm2:[`area`]
+|\index{\texttt{area}}
 |
 |
 
 |16
-|indexterm2:[`time`]
+|\index{\texttt{time}}
 |
 |
 
 |17
-|indexterm2:[`pickadd`]
+|\index{\texttt{pickadd}}
 |
 |
 
 |16
-|indexterm2:[`zoomfactor`]
+|\index{\texttt{zoomfactor}}
 |
 |
 
 |17
-|indexterm2:[`product`]
+|\index{\texttt{product}}
 |
 |
 
 |18
-|indexterm2:[`program`]
+|\index{\texttt{program}}
 |
 |
 
 |19
-|indexterm2:[`zoomwindow`]
+|\index{\texttt{zoomwindow}}
 |
 |
 
 |20
-|indexterm2:[`divide`]
+|\index{\texttt{divide}}
 |
 |
 
 |21
-|indexterm2:[`find`]
+|\index{\texttt{find}}
 |
 |
 
 | 22
-| indexterm2:[`record`]
+| \index{\texttt{record}}
 |
 |
 
 | 23
-| indexterm2:[`playback`]
+| \index{\texttt{playback}}
 |
 |
 
 | 24
-| indexterm2:[`rotate`]
+| \index{\texttt{rotate}}
 |
 |
 
 | 25
-| indexterm2:[`rgb`]
+| \index{\texttt{rgb}}
 |
 |
 
 | 26
-| indexterm2:[`move`]
+| \index{\texttt{move}}
 |
 |
 
 | 27
-| indexterm2:[`grid`]
+| \index{\texttt{grid}}
 |
 |
 
 | 28
-| indexterm2:[`griphot`]
+| \index{\texttt{griphot}}
 |
 |
 
 | 29
-| indexterm2:[`gripcolor`]
+| \index{\texttt{gripcolor}}
 |
 |
 
 | 30
-| indexterm2:[`gripcool`]
+| \index{\texttt{gripcool}}
 |
 |
 
 | 31
-| indexterm2:[`gripsize`]
+| \index{\texttt{gripsize}}
 |
 |
 
 | 32
-| indexterm2:[`highlight`]
+| \index{\texttt{highlight}}
 |
 |
 
 | 33
-| indexterm2:[`units`]
+| \index{\texttt{units}}
 |
 |
 
 | 34
-| indexterm2:[`locatepoint`]
+| \index{\texttt{locatepoint}}
 |
 |
 
 | 35
-| indexterm2:[`distance`]
+| \index{\texttt{distance}}
 |
 |
 
 | 36
-| indexterm2:[`arc`]
+| \index{\texttt{arc}}
 |
 |
 
 | 37
-| indexterm2:[`ellipse`]
+| \index{\texttt{ellipse}}
 |
 |
 
 |38
-| indexterm2:[`array`]
+| \index{\texttt{array}}
 |
 |
 
 |39
-| indexterm2:[`point`]
+| \index{\texttt{point}}
 |
 |
 
 |40
-| indexterm2:[`polyline`]
+| \index{\texttt{polyline}}
 |
 |
 
 |41
-| indexterm2:[`polygon`]
+| \index{\texttt{polygon}}
 |
 |
 
 | 42
-| indexterm2:[`rectangle`]
+| \index{\texttt{rectangle}}
 |
 |
 
 | 43
-| indexterm2:[`line`]
+| \index{\texttt{line}}
 |
 |
 
 | 44
-| indexterm2:[`arc-rt`]
+| \index{	exttt{arc-rt}}
 |
 |
 
 | 45
-| indexterm2:[`dolphin`]
+| \index{\texttt{dolphin}}
 |
 |
 
 | 46
-| indexterm2:[`heart`]
+| \index{\texttt{heart}}
 |
 |
 
-|====
-
-\section{Actions}
+\end{tabular}\section{Actions}
 
 \subsection{ARC}
-indexterm:[arc]
+index[arc}
 
 \subsection{CIRCLE}
-indexterm:[circle]
+index[circle}
 
 \subsection{OPEN}
-indexterm:[open]
+index[open}
 
 \section{Changelog}
 
@@ -1406,13 +1421,13 @@ Stuff that is now supposed to be generated by Doxygen:
 
 \section{Overview}
 
-==== Read/Write Support Levels
+\subsubsection{Read/Write Support Levels}
 
 The table of read/write format support levels uses the status levels described here:
 
 .Read/Write Support Levels
-[cols="1,8"]
-|====
+[cols="1,8"}
+\begin{tabular}{l l l}
 | *Status Label*
 | *Description*
 
@@ -1433,16 +1448,14 @@ The table of read/write format support levels uses the status levels described h
 
 | `rw-complete`
 | All known features of the format work on machines that use this format. Translations from and to this format preserve all features present in both.
-|====
-
-These can be split into `r-basic w-none`, for example, if they don't match.
+\end{tabular}These can be split into `r-basic w-none`, for example, if they don't match.
 
 So all formats can, in principle, have good read and good write support, because it's defined in relation to files that we have described the formats for.
 
-==== Test Support Levels
+\subsubsection{Test Support Levels}
 
-[cols="1,8"]
-|====
+[cols="1,8"}
+\begin{tabular}{l l l}
 | *Status Label*
 | *Description*
 
@@ -1460,99 +1473,97 @@ So all formats can, in principle, have good read and good write support, because
 
 | `test-complete`
 | Both thorough and fuzz testing is covered.
-|====
+\end{tabular}So all formats can, in principle, have complete testing support, because it's defined in relation to files that we have described the formats for.
 
-So all formats can, in principle, have complete testing support, because it's defined in relation to files that we have described the formats for.
+\subsubsection{Documentation Support Levels}
 
-==== Documentation Support Levels
-
-[cols="1,8"]
-|====
-| *Status Label*
-| *Description*
-
-| `doc-none`
+% cols="1,8"
+\begin{tabular}
+\textbf{Status Label} &
+\textbf{Description}
+\\
+| `doc-none` &
 | We haven't researched this beyond finding example files.
-
-| `doc-basic`
+\\
+| `doc-basic` &
 | We have a rough sketch of the size and contents of the header if there is one. We know the basic stitch encoding (if there is one), but not necessarily all stitch features.
-
-| `doc-standard`
+\\
+| `doc-standard` &
 | We know some good sources and/or have tested all the features that appear to exist. They mostly work the way we have described.
-
-| `doc-good`
+\\
+| `doc-good` &
 | All features that were described somewhere have been covered here or we have thoroughly tested our ideas against other softwares and hardwares and they work as expected.
-
-| `doc-complete`
+\\
+| `doc-complete` &
 | There is a known official description and our description covers all the same features.
-|====
+\end{tabular}
 
 Not all formats can have complete documentation because it's based on what
 information is publically available. So the total score is reported in the table
 below based on what level we think is available.
 
-==== Overall Support
+\subsubsection{Overall Support}
 
 Since the overall support level is the combination of these
 4 factors, but rather than summing up their values it's an
 issue of the minimum support of the 4.
 
-[cols="1,8"]
-|====
-| *Status Label*
-| *Description*
-
-| `read-only`
-| If write support is none and read support is not none.
-
-| `write-only`
-| If read support is none and write support is not none.
-
-| `unstable`
-| If both read and write support are not none but testing or documentation is none.
-
-| `basic`
-| If all ratings are better than none.
-
-| `reliable`
-| If all ratings are better than basic.
-
-| `complete`
-| If all ratings could not reasonably be better (for example any improvements
+% cols="1,8"
+\begin{tabular}
+\textbf{Status Label} &
+\textbf{Description}
+\\
+`read-only` &
+If write support is none and read support is not none.
+\\
+`write-only` &
+If read support is none and write support is not none.
+\\
+`unstable` &
+If both read and write support are not none but testing or documentation is none.
+\\
+`basic` &
+If all ratings are better than none.
+\\
+`reliable` &
+If all ratings are better than basic.
+\\
+`complete` &
+If all ratings could not reasonably be better (for example any improvements
 rely on information that we may never have access to). This is the only status
 that can be revoked, since if the format changes or new documentation is
 released it is no longer complete.
+\\
+`experimental` &
+For all other scenarios.
+\end{tabular}
 
-| `experimental`
-| For all other scenarios.
-|====
-
-\section{Table of Format Support Levels
+\section{Table of Format Support Levels}
 
 Overview of documentation support by format.
 
-[cols="1,1,1"]
-|====
+[cols="1,1,1"}
+\begin{tabular}{l l l}
 | *Format*
 | *Ratings*
 | *Score*
 
-| indexterm2:[Toyota] Embroidery Format (indexterm:[`100`]`.100`)
+| \index{Toyota] Embroidery Format (index[`100}}`.100`)
 | rw-basic doc-none test-none
 | unstable
 
-| indexterm2:[Toyota] Embroidery Format (indexterm:[`10o`]`.10o`)
+| \index{Toyota] Embroidery Format (index[`10o}}`.10o`)
 | rw-basic doc-none test-none
 | unstable
 
-| indexterm2:[Bernina] Embroidery Format (indexterm:[`art`]`.art`)
+| \index{Bernina] Embroidery Format (index[`art}}`.art`)
 | rw-none doc-none test-none
 | experimental
 
-| indexterm2:[Bitmap Cache] Embroidery Format (`.bmc`)
+| \index{Bitmap Cache] Embroidery Format (`.bmc`)
 | r-basic w-none doc-none test-none|unstable
 
-| indexterm2:[Bits and Volts] Embroidery Format (`.bro`)
+| \index{Bits and Volts] Embroidery Format (`.bro`)
 | rw-none doc-none test-none
 | experimental
 
@@ -1760,7 +1771,7 @@ Overview of documentation support by format.
 | rw-none doc-none test-none
 | experimental
 
-| Barudan Embroidery Format (indexterm:[`u01`]`.u01`)
+| Barudan Embroidery Format (index[`u01}}`.u01`)
 | rw-none doc-none test-none
 | experimental
 
@@ -1784,188 +1795,186 @@ Overview of documentation support by format.
 | *READ, WRITE*
 | *NOTES*
 
-| indexterm2:[`10o`]
+| \index{\texttt{10o}}
 | YES, NO
 | read (need to fix external color loading) (maybe find out what ctrl and code flags of `0x10`, `0x08`, `0x04`, and `0x02` mean)
 
-| indexterm2:[`100`]
+| \index{\texttt{100}}
 | NO, NO
 | none (4 byte codes) `61 00 10 09` (type, type2, x, y ?) x and y (signed char)
 
-| indexterm2:[`art`]
+| \index{\texttt{art}}
 | NO, NO
 | none
 
-| indexterm2:[`bro`]
+| \index{\texttt{bro}}
 | YES NO
 | read (complete)(maybe figure out detail of header)
 
-| indexterm2:[`cnd`]
+| \index{\texttt{cnd}}
 | NO, NO
 | none
 
-| indexterm2:[`col`]
+| \index{\texttt{col}}
 | NO, NO
 | (color file no design) read(final) write(final)
 
-| indexterm2:[`csd`]
+| \index{\texttt{csd}}
 | YES NO
 | read (complete)
 
-| indexterm2:[`dat`]
+| \index{\texttt{dat}}
 | NO, NO
 | read ()
 
-| indexterm2:[`dem`]
+| \index{\texttt{dem}}
 | NO, NO
 | none (looks like just encrypted cnd)
 
-| indexterm2:[`dsb`]
+| \index{\texttt{dsb}}
 | YES NO
 | read (unknown how well) (stitch data looks same as 10o)
 
-| indexterm2:[`dst`]
+| \index{\texttt{dst}}
 | YES NO
 | read (complete) / write(unknown)
 
-| indexterm2:[`dsz`]
+| \index{\texttt{dsz}}
 | YES NO
 | read (unknown)
 
-| indexterm2:[`dxf`]
+| \index{\texttt{dxf}}
 | NO, NO
 | read (Port to C. needs refactored)
 
-| indexterm2:[`edr`]
+| \index{\texttt{edr}}
 | NO, NO
 | read (C version is broken) / write (complete)
 
-| indexterm2:[`emd`]
+| \index{\texttt{emd}}
 | NO, NO
 | read (unknown)
 
-| indexterm2:[`exp`]
+| \index{\texttt{exp}}
 | YES NO
 | read (unknown) / write(unknown)
 
-| indexterm2:[`exy`]
+| \index{\texttt{exy}}
 | YES NO
 | read (need to fix external color loading)
 
-| indexterm2:[`fxy`]
+| \index{\texttt{fxy}}
 | YES NO
 | read (need to fix external color loading)
 
-| indexterm2:[`gnc`]
+| \index{\texttt{gnc}}
 | NO, NO
 | none
 
-| indexterm2:[`gt`]
+| \index{\texttt{gt}}
 | NO, NO
 | read (need to fix external color loading)
 
-| indexterm2:[`hus`]
+| \index{\texttt{hus}}
 | YES NO
 | read (unknown) / write (C version is broken)
 
-| indexterm2:[`inb`]
+| \index{\texttt{inb}}
 | YES NO
 | read (buggy?)
 
-| indexterm2:[`jef`]
+| \index{\texttt{jef}}
 | YES NO
 | write (need to fix the offsets when it is moving to another spot)
 
-| indexterm2:[`ksm`]
+| \index{\texttt{ksm}}
 | YES NO
 | read (unknown) / write (unknown)
 
-| indexterm2:[`pcd`]
+| \index{\texttt{pcd}}
 | NO, NO
 |
 
-| indexterm2:[`pcm`]
+| \index{\texttt{pcm}}
 | NO, NO
 |
 
-| indexterm2:[`pcq`]
+| \index{\texttt{pcq}}
 | NO, NO
 | read (Port to C)
 
-| indexterm2:[`pcs`]
+| \index{\texttt{pcs}}
 | BUGGY, NO
 | read (buggy / colors are not correct / after reading, writing any other format is messed up)
 
-| indexterm2:[`pec`]
+| \index{\texttt{pec}}
 | NO, NO
 | read / write (without embedded images, sometimes overlooks some stitches leaving a gap)
 
-| indexterm2:[`pel`]
+| \index{\texttt{pel}}
 | NO, NO
 | none
 
-| indexterm2:[`pem`]
+| \index{\texttt{pem}}
 | NO, NO
 | none
 
-| indexterm2:[`pes`]
+| \index{\texttt{pes}}
 | YES, NO
 |
 
-| indexterm2:[`phb`]
+| \index{\texttt{phb}}
 | NO, NO
 |
 
-| indexterm2:[`phc`]
+| \index{\texttt{phc}}
 | NO, NO
 |
 
-| indexterm2:[`rgb`]
+| \index{\texttt{rgb}}
 | NO, NO
 |
 
-| indexterm2:[`sew`]
+| \index{\texttt{sew}}
 | YES, NO
 |
 
-| indexterm2:[`shv`]
+| \index{\texttt{shv}}
 | NO, NO
 | read (C version is broken)
 
-| indexterm2:[`sst`]
+| \index{\texttt{sst}}
 | NO, NO
 | none
 
-| indexterm2:[`svg`]
+| \index{\texttt{svg}}
 | NO, YES
 |
 
-| indexterm2:[`tap`]
+| \index{\texttt{tap}}
 | YES, NO
 | read (unknown)
 
-| indexterm2:[`u01`]
+| \index{\texttt{u01}}
 | NO, NO
 |
 
-| indexterm2:[`vip`]
+| \index{\texttt{vip}}
 | YES, NO
 |
 
-| indexterm2:[`vp3`]
+| \index{\texttt{vp3}}
 | YES, NO
 |
 
-| indexterm2:[`xxx`]
+| \index{\texttt{xxx}}
 | YES, NO
 |
 
-| indexterm2:[`zsk`]
+| \index{\texttt{zsk}}
 | NO, NO
 | read (complete)
-|====
-
-* TODO Josh, Review this section and move any info still valid or
+\end{tabular}* TODO Josh, Review this section and move any info still valid or
 needing work into TODO comments in the actual
 libembroidery code. Many items in this list are out of date and do not reflect the current status of
 libembroidery. When finished, delete this file.
@@ -1980,7 +1989,7 @@ libembroidery. When finished, delete this file.
 
 \section{To Do
 
-==== Arduino
+\subsubsection{Arduino
 
 * Fix emb-outline files
 * Fix thread-color files
@@ -1988,15 +1997,15 @@ libembroidery. When finished, delete this file.
 * inotool.org - seems like the logical solution for Nightly/CI builds
 * Smoothieboard experiments
 
-==== Testing
+\subsubsection{Testing
 
 * looping test that reads 10 times while running valgrind. See `embPattern_loadExternalColorFile()` Arduino leak note for more info.
 
-==== Development
+\subsubsection{Development
 
 If you wish to develop with us you can chat via the contact email
-on the  website https://libembroidery.org[] or in the issues tab on the
- github page https://github.com/Embroidermodder/Embroidermodder/issues[].
+on the  website https://libembroidery.org} or in the issues tab on the
+ github page https://github.com/Embroidermodder/Embroidermodder/issues}.
 People have been polite and friendly in these conversations and I (Robin)
 have really enjoyed them.
 If we do have any arguments please note we have a
@@ -2008,7 +2017,7 @@ above. Then read some of the  manual
 https://libembroidery.org/embroidermodder_2.0_manual.pdf to get the general
 layout of the source code and what we are currently planning.
 
-==== Testing
+\subsubsection{Testing
 
 To find unfixed errors run the tests by launching from the command line with:
 
@@ -2021,13 +2030,13 @@ there are so many but if you can fix anything reported here you can submit a PR.
 
 \section{Contributing
 
-==== Funding
+\subsubsection{Funding
 
 The easiest way to help is to fund development (see the Donate button above),
 since we can't afford to spend a lot of time developing and only have limited
 kit to test out libembroidery on.
 
-==== Programming and Engineering
+\subsubsection{Programming and Engineering
 
 Should you want to get into the code itself:
 
@@ -2037,7 +2046,7 @@ Should you want to get into the code itself:
 * Scheme developers and C/SDL developers to help build the GUI.
 * Scheme developers to help add designs for generating of custom stitch-filled emblems like the heart or dolphi. Note that this happens in Embroidermodder not libembroidery (which assumes that you already have a function available).
 
-==== Writing
+\subsubsection{Writing
 
 We also need people familiar with the software and the general
 machine embroidery ecosystem to contribute to the
@@ -2054,17 +2063,17 @@ A basic set of guidelines to use when submitting code.
 
 Code structure is mre important than style, so first we advise you read "Design" and experimenting before getting into the specifics of code style.
 
-==== Where Code Goes
+\subsubsection{Where Code Goes
 
 Anything that deals with the specifics of embroidery file formats, threads,
 rendering to images, embroidery machinery or command line interfaces should go 
 in `libembroidery` not here.
 
-==== Where Non-compiled Files Go
+\subsubsection{Where Non-compiled Files Go
 
 TODO: Like most user interfaces Embroidermodder is mostly data, so here we will have a list describing where each CSV goes.}
 
-==== Ways in which we break style on purpose
+\subsubsection{Ways in which we break style on purpose
 
 Most style guides advise you to keep functions short. We make a few pointed
 exceptions to this where the overall health and functionality of the source code should benefit.
@@ -2076,7 +2085,7 @@ the section on the actuator (TODO) describing why any other solution we could
 think  here would mean more more code without a payoff in speed of execution or
 clarity.
 
-\section{Version Control
+\section{Version Control}
 
 Being an open source project, developers can grab the latest code at any time and attempt to build it themselves. We try our best to ensure that it will build smoothly at any time, although occasionally we do break the build. In these instances, please provide a patch, pull request which fixes the issue or open an issue and notify us of the problem, as we may not be aware of it and we can build fine.
 
@@ -2092,12 +2101,12 @@ Creating software that interfaces with hardware is costly. A summary of some of 
 * Various electronics for kitbashing Embroiderbot
 * Consumable materials (thread, fabric, stabilizer, etc...)
 
-If you have found our software useful, please consider funding further development by donating to the project on Open Collective (https://opencollective.com/embroidermodder[]).
+If you have found our software useful, please consider funding further development by donating to the project on Open Collective (https://opencollective.com/embroidermodder}).
 
 \section{Embroidermodder Project Coding Standards
 
 Rather than maintain our own standard for style, please defer to
-the Python's PEP 7 \citep[pep7] for C style and emulating that in C++.
+the Python's PEP 7 \citep{pep7] for C style and emulating that in C++.
 
 A basic set of guidelines to use when submitting code. Defer to the PEP7 standard with the following additions:
 
@@ -2209,7 +2218,7 @@ The criteria for a good Pull Request from an outside developer has these propert
 * No GUI specific code should be in libembroidery, that's for Embroidermodder.
 * Pedantic/ansi C unless there's a good reason to use another language.
 * Meet the style above (i.e.  PEP 7, Code Lay-out
-  (https://peps.python.org/pep-0007/#code-lay-out[]). We'll just fix the style
+  (https://peps.python.org/pep-0007/#code-lay-out}). We'll just fix the style
   if the code's good and it's not a lot of work.
 * `embroider` should be in POSIX style as a command line program.
 * No dependancies that aren't "standard", i.e. use only the C Standard Library.
@@ -2221,7 +2230,7 @@ the scenario where a user wants to feed embroider an image that can then be .
 
 \subsection{To Place
 
-A _right-handed coordinate system_ indexterm:[right-handed coordinate system]
+A _right-handed coordinate system_ index[right-handed coordinate system}
 is one where up is positive and right is
 positive. Left-handed is up is positive, left is positive. Screens often use
 down is positive, right is positive, including the OpenGL standard so when
@@ -2259,7 +2268,7 @@ Beyond this the development targets are categories sorted into:
 * GUI
 * electronics development
 
-\subsection{Basic features
+\subsection{Basic features}
 
 * Incorporate `#if 0` ed parts of `libembroidery.c`.
 * Interpret how to write formats that have a read mode from the source
@@ -2270,14 +2279,14 @@ Beyond this the development targets are categories sorted into:
 * Find more and better documentation of the structure of the headers for the
   formats we do understand.
 
-\subsection{Code quality and user friendliness
+\subsection{Code quality and user friendliness}
 
 * Document all structs, macros and functions (will contribute directly
    on the web version).
 * Incorporate experimental code, improve support for language bindings.
 * Make stitch x, y into an EmbVector.
 
-\subsection{Documentation
+\subsection{Documentation}
 
 Run `sloccount` on `extern/` and `.` (and ) so we know the
 current scale of the project, aim to get this number low. Report the total as
@@ -2287,16 +2296,16 @@ Try to get as much of the source code that we maintain into C as possible so
 new developers don't need to learn multiple languages to have an effect. This
 bars the embedded parts of the code.
 
-\subsection{GUI
+\subsection{GUI}
 
 * Make EmbroideryMobile (Android) also backend to `libembroidery` with a Java wrapper.
 * Make EmbroideryMobile (iOS) also backend to `libembroidery` with a Swift wrapper.
 * Share some of the MobileViewer and iMobileViewer layout with the main EM2. Perhaps combine those 3 into the Embroidermodder repository so there are 4 repositories total.
 * Convert layout data to JSON format and use cJSON for parsing.
 
-\section{Development
+\section{Development}
 
-\subsection{Contributing
+\subsection{Contributing}
 
 If you're interested in getting involved, here's some guidance
 for new developers. Currently The Embroidermodder Team is all
@@ -2309,12 +2318,12 @@ All code written for libembroidery should be ANSI C89 compliant
 if it is C. Using other languages should only be used where
 necessary to support bindings.
 
-\subsection{Debug
+\subsection{Debug}
 
 If you wish to help with development, run this debug script and send us the
 error log.
 
-----
+\begin{lstlisting}
 #!/bin/bash
 
 rm -fr libembroidery-debug
@@ -2326,18 +2335,18 @@ cmake -DCMAKE_BUILD_TYPE=DEBUG .
 cmake --build . --config=DEBUG
 
 valgrind ./embroider --full-test-suite
-----
+\end{lstlisting}
 
 While we will attempt to maintain good results from this script as part of
 normal development it should be the first point of failure on any system we
 haven't tested or format we understand less.
 
-\subsection{Binary download
+\subsection{Binary download}
 
 We need a current `embroider` command line program download, so people can update
 without building.
 
-\chapter{Programming principles for the C core
+\chapter{Programming principles for the C core}
 
 End arrays of char arrays with the symbol "END", the code will never require
 this symbol as an entry.
@@ -2351,19 +2360,19 @@ Define an array as one of 3 kinds: constant, editable or data.
   so it is not restricted to a total number of entries.
 * Data arrays is editable and changes total size at runtime to account for user data.
 
-\section{Style rules for arrays
+\section{Style rules for arrays}
 
 1.
 
 
-\chapter{Libembroidery on Embedded Systems
+\chapter{Libembroidery on Embedded Systems}
 
 The libembroidery library is designed to support embedded environments as well
 as desktop, so it can be used in CNC applications.
 
 Originally, the embedded system aspect of the Embroidermodder project was
-targeted at the higher end indexterm2:[Arduino] prototyping board as part
-of a general effort to make our own open source hardware (indexterm2:[OSHW]).
+targeted at the higher end \index{Arduino] prototyping board as part
+of a general effort to make our own open source hardware (\index{OSHW]).
 
 However, the task of building the interface for a full OSHW embroidery machine
 neatly splits into the tasks of building a user interface to issue the
@@ -2372,15 +2381,15 @@ this control circuit. A well built control circuit could issue commands to
 a variety of different machine layouts (for example many features are not
 present on some machines)
 
-\section{Compatible Boards
+\section{Compatible Boards}
 
-We recommend using an indexterm2:[Arduino] Mega 2560 or another board with equal or
+We recommend using an \index{Arduino] Mega 2560 or another board with equal or
 greater specs. That being said, we have had success using an Arduino Uno
 R3 but this will likely require further optimization and other
 improvements to ensure continued compatibility with the Uno. See below
 for more information.
 
-\section{Arduino Considerations
+\section{Arduino Considerations}
 
 There are two main concerns here: Flash Storage and SRAM.
 
@@ -2401,9 +2410,10 @@ libembroidery must implement event handlers. See the ino-event source
 and header files for more information.
 
 There is also an excellent article by Bill Earl on the Adafruit Learning
-Systemfootnote:[http://learn.adafruit.com/memories-of-an-arduino?view=all].
+System
+\footnote{\url{http://learn.adafruit.com/memories-of-an-arduino?view=all}}.
 
-\section{Space
+\section{Space}
 
 Since a stitch takes 3 bytes of storage and many patterns use more than
 10k stitches, we can't assume that the pattern will fit in memory. Therefore
@@ -2418,7 +2428,7 @@ the arrays lie in storage.
 
 TODO: Replace EmbArray functions with `embPattern_` load functions.
 
-\section{Tables
+\section{Tables}
 
 All thread tables and large text blocks are too big to compile directly
 into the source code. Instead we can package the library with a data packet
@@ -2431,7 +2441,7 @@ needs to be loaded on the pattern USB/SD card or the program won't function.
 TODO: Start file with a list of offsets to data with a corresponding table
 to load into with macro constants for each label needed.
 
-\section{Current Pattern Memory Management
+\section{Current Pattern Memory Management}
 
 It will be simpler to make one file per EmbArray so we keep an EmbFile*
 and a length, so no malloc call is necessary. So there needs to be a consistent
@@ -2441,7 +2451,7 @@ TODO: For each pattern generate a random string of hexadecimal and append it
 to the filenames like `stitchList_A16F.dat`. Need to check for a file
 which indicates that this string has been used already.
 
-\section{Special Notes
+\section{Special Notes}
 
 Due to historical reasons and to remain compatible with the Arduino 1.0
 IDE, this folder must be called ``utility''. Refer to the arduino build
@@ -2450,7 +2460,7 @@ process for more infofootnote:[https://arduino.github.io/arduino-cli/0.19/sketch
 libembroidery relies on the Arduino SD library for reading files. See
 the ino-file source and header files for more information.
 
-\section{The Assembly Split
+\section{The Assembly Split}
 
 One problem to the problem of supporting both systems with abundant memory
 (such as a 2010s or later desktop) and with scarce memory (such as embedded
@@ -2465,9 +2475,9 @@ smaller set of features will be supported. However, we will write a
 That way the work that has been done to simplify the C code can be applied
 to the assembly versions.
 
-\chapter{Electronics development
+\chapter{Electronics development}
 
-\section{Ideas
+\section{Ideas}
 
 Currently experimenting with Fritzing 8 (8), upload netlists to embroiderbot when
 they can run simulations using the asm in `libembroidery`.
@@ -2478,283 +2488,285 @@ Create a common assembly for data that is the same across chipsets
 Make the defines part of `embroidery.h` all systems and the function list
 `c code only`. That way we can share some development between assembly and C versions.
 
-\chapter{Mobile
+\chapter{Mobile}
 
 Again, it would help to use the C library we have already developed,
 however for Android the supported platform is for Java applications.
 
-https://github.com/java-native-access/jna[]
+\url{https://github.com/java-native-access/jna}
 
-https://github.com/marketplace/actions/setup-android-ndk[]
+\url{https://github.com/marketplace/actions/setup-android-ndk}
 
-https://developer.android.com/ndk/guides[]
+\url{https://developer.android.com/ndk/guides}
 
 See the bindings section for how this is achieved.
 
-\chapter{Tread Tables
+\bibliographystyle{usrtnat}
+\bibliography{references}
+
+\appendix
+
+\chapter{Tread Tables}
 
 \section{Arc Polyester Codes
 
 .Arc Polyester Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
-
-\section{Arc Rayon Codes
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}\section{Arc Rayon Codes
 
 .Arc Rayon Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
-
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 \section{Coats and Clark Rayon Codes
 
 .Coats and Clark Rayon Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
-
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 \section{DXF Colors
 
 Based on the DraftSight color table.
 
 .DXF Colors
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Exquisite Polyester Codes
 
 .Exquisite Polyester Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Fufu Polyester Codes
 
 .Fufu Polyester Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Fufu Rayon Codes
 
 .Fufu Rayon Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Hemingworth Polyester Codes
 
 .Hemingworth Polyester Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{HUS Colors (find a citation)
 
 ; CSV format: red, green, blue, name, catalog_number
 
 .HUS Colors
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Isacord Polyester Codes
 
 .Isacord Polyester Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Isafil Rayon Codes
 
 .Isafil Rayon Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{JEF Colors
 
 To do: find a citation
 
 .JEF Colors
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Madeira Polyester Codes
 
 .Madeira Polyester Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Madeira Rayon Codes
 
 .Madeira Rayon Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Marathon Polyester Codes
 
 .Marathon Polyester Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Marathon Rayon Codes
 
 .Marathon Rayon Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Metro Polyester Code
 
 .Metro Polyester Code
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Pantone Codes
 
-See https://www.pantone-colours.com/[]
+See https://www.pantone-colours.com/}
 
 .Pantone Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{PCM Color Codes
 
 .PCM Color Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{PEC Color Codes
 
 .PEC Color Codes
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
 \section{Robinson Anton Polyester Codes
-indexterm:[Robinson Anton]
+index[Robinson Anton}
 
 .Robinson Anton Polyester Colors.
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/shv_colors.csv}
+\end{tabular}
 
-\section{Robinson Anton Rayon Codes
-indexterm:[Robinson Anton]
-indexterm:[Rayon]
+\begin{table}
+\begin{tabular}{l l l}
+\include{data/shv_colors.csv}
+\end{tabular}
+\caption{
+Robinson Anton Rayon Colors.
+\index{Robinson Anton}
+\index{Rayon}
+}
+\end{table}
 
-.Robinson Anton Rayon Colors.
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
+\begin{table}
+\begin{tabular}{l l l}
+\include{data/shv_colors.csv}
+\end{tabular}
+\caption{SHV Thread Colors.}
+\end{table}
 
-\section{SHV Colors
-
-.SHV Thread Colors
-[%header,format=csv]
-|====
-include::data/shv_colors.csv[]
-|====
-
-\section{Sigma Polyester Codes
+\section{Sigma Polyester Codes}
 
 .Sigma Polyester Thread Colors
-[%header,format=csv]
-|====
-include::data/z102_isacord_polyester_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+\include{data/z102_isacord_polyester_colors.csv}
+\end{tabular}
 
 \section{Sulky Rayon Colors
-indexterm:[Sulky]
-indexterm:[Rayon]
+\index{Sulky}
+\index{Rayon}
 
 .Sulky Rayon Colors
-[%header,format=csv]
-|====
-include::data/z102_isacord_polyester_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/z102_isacord_polyester_colors.csv}
+\end{tabular}
 
-\section{SVG Colors
-indexterm:[SVG]
+\section{SVG Colors}
+\index{SVG}
 
 Converted from the table at:
-https://www.w3.org/TR/SVGb/types.html#ColorKeywords[]
+\url{https://www.w3.org/TR/SVGb/types.html#ColorKeywords}
 
 NOTE: This supports both UK and US English names, so the repeated values aren't an error.
 
-[%header,format=csv]
-|====
-include::data/z102_isacord_polyester_colors.csv[]
-|====
+[%header,format=csv}
+\begin{tabular}{l l l}
+include{data/z102_isacord_polyester_colors.csv}
+\end{tabular}
 
 \section{ThreadArt Polyester
-indexterm:[ThreadArt]
+index[ThreadArt}
 
-[%header,format=csv]
-|====
-include::data/z102_isacord_polyester_colors.csv[]
-|====
+\begin{table}
+\begin{tabular}{l l l}
+include{data/z102_isacord_polyester_colors.csv}
+\end{tabular}
+\caption{.}
+\end{table}
 
-\section{ThreadArt Rayon Codes
-indexterm:[ThreadArt]
+\section{ThreadArt Rayon Codes}
+\index[ThreadArt}
 
-[%header,format=csv]
-|====
-include::data/z102_isacord_polyester_colors.csv[]
-|====
+\begin{table}
+\begin{tabular}{l l l}
+\include{data/z102_isacord_polyester_colors.csv}
+\end{tabular}
+\caption{.}
+\end{table}
 
-\section{ThreaDelight Polyester Codes
-indexterm:[ThreadDelight]
+\section{ThreaDelight Polyester Codes}
+\index[ThreadDelight}
 
-[%header,format=csv]
-|====
-include::data/z102_isacord_polyester_colors.csv[]
-|====
+\begin{table}
+\begin{tabular}{l l l}
+\include{data/z102_isacord_polyester_colors.csv}
+\end{tabular}
+\caption{.}
+\end{table}
 
-\section{Z102 Isacord Polyester Codes
+\section{Z102 Isacord Polyester Codes}
 
-[%header,format=csv]
-|====
-include::data/z102_isacord_polyester_colors.csv[]
-|====
+\begin{table}
+\begin{tabular}{l l l}
+\include{data/z102_isacord_polyester_colors.csv}
+\end{tabular}
+\caption{.}
+\end{table}
 
-[bibliography]
-\chapter{Bibliography
-
-bibliography::references.bib[apa]
-
-[index]
-\chapter{Index
-
+\printindex
