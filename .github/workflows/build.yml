@@ -12,10 +12,6 @@ jobs:
         uses: dante-ev/latex-action@latest
         with:
           root_file: emrm.tex
-#      - name: Dependencies
-#        run: sh scripts/deps.sh
-#      - name: Build
-#        run: make
       - uses: actions/upload-artifact@v4
         with:
           name: refman
