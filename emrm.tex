@@ -205,7 +205,7 @@ See Chapter~\ref{PET}.
 \end{itemize}
 
 The website, this manual and some scripts to construct the distribution are
-maintained in \citep{thewebsite}.
+maintained in %\citep{thewebsite}.
 
 They all tools to make the standard
 user experience of working with an embroidery machine better without expensive
@@ -409,17 +409,19 @@ pandoc embroidermodder_refman.tex -f latex -t html -s -o emb_refman.html --bibli
 
 \subsection{Command Language}
 
-Printer Command Language (PCL), see \citet{packard1992pcl}.
+Printer Command Language (PCL), see %\citet{packard1992pcl}.
 
-HP-GL/2 Vector Graphics \index{HP-GL/2} described in \citet{packard1992pcl}.
+HP-GL/2 Vector Graphics \index{HP-GL/2} described in %\citet{packard1992pcl}.
 Has commands like: \texttt{PU} Pen Up, \texttt{PR} Plot Relative,
 \texttt{EP} edge polygon.
 
 So commands read like this:
 
-    PA40,10;
+\begin{lstlisting}
+PA40,10;
+\end{lstlisting}
 
-command argument seperator(``,``) argument terminator(``;``)
+command argument seperator (\texttt{,}) argument terminator(\texttt{;})
 
 Constructing new commands from old ones in the command language is less
 natural in the HP-GL/2 language, but a similar layer for us is
@@ -484,7 +486,7 @@ For more basic usage, `embroider` should have some in-built help
 starting with:
 
 \begin{lstlisting}
-    $ embroider --help
+$ embroider --help
 \end{lstlisting}
 
 \subsection{License}
@@ -748,8 +750,8 @@ descriptions.
 Embroidermodder backends to the postscript interpreter included in libembroidery
 to accomplish this.
 
-For example the string: ``5 2 t mul add`` is equivalent to
-the expression ``2*t + 5``.
+For example the string: \texttt{5 2 t mul add} is equivalent to
+the expression $2*t + 5$.
 
 The benefit of not allowing this to simply be a Python expression is that it is safe against
 malicious use, or accidental misuse. The program can identify whether the output is of the
@@ -894,11 +896,11 @@ Only do this once per minor version number.
 
 (This needs a hook from Embroidermodder to embroider's full test suite.)
 
-The flag ``--full-test-suite`` runs all the tests that have been written.
+The flag \texttt{--full-test-suite} runs all the tests that have been written.
 Since this results in a lot of output the details are both to stdout
-and to a text file called ``test\_matrix.txt``.
+and to a text file called \texttt{test\_matrix.txt}.
 
-Patches that strictly improve the results in the ``test\_matrix.txt`` over
+Patches that strictly improve the results in the \texttt{test\_matrix.txt} over
 the current version will likely be accepted and it'll be a good place
 to go digging for contributions. (Note: strictly improve means that
 the testing result for each test is as good a result, if not better.
@@ -927,12 +929,14 @@ other teams using the library.
 
 So libembroidery is going to be supported on:
 
-* ``C`` (by default)
-* ``C++`` (also by default)
-* ``Java`` (for the Android :index:`Android` application MobileViewer)
-* ``Swift`` (for the iOS :index:`iOS` application iMobileViewer)
+\begin{itemize}
+\item \texttt{C} (by default)
+\item \texttt{C++} (also by default)
+\item \texttt{Java} (for the Android\index{Android} application MobileViewer)
+\item \texttt{Swift} (for the iOS\index{iOS} application iMobileViewer)
+\end{itemize}
 
-For ``C\#`` :index:`C-sharp` we recommend directly calling the function directly
+For \texttt{C\#}\index{C\#}\index{C-sharp} we recommend directly calling the function directly
 using the DllImport feature:
 
 \begin{lstlisting}
@@ -989,9 +993,9 @@ It should be immediately obvious what information it represents.
 Short names such as x and y are fine when referring to coordinates.
 Short names such as i and j are fine when doing loops.
 
-Variable names should be ``camelCase``, starting with a lowercase word followed by uppercase word(s).
-C++ Class Names should be ``CamelCase``, using all uppercase word(s).
-C Functions that attempt to simulate namespacing, should be "nameSpace\_camelCase".
+Variable names should be \texttt{camelCase}, starting with a lowercase word followed by uppercase word(s).
+C++ Class Names should be \texttt{CamelCase}, using all uppercase word(s).
+C Functions that attempt to simulate namespacing, should be \texttt{"nameSpace\_camelCase"}.
 
 All files and directories shall be lowercase and contain no spaces.
 
@@ -1033,13 +1037,6 @@ comments shown below. They are pretty standard and are highlighted by many edito
 make reviewing code easier. We also use shell scripts to parse the code to find
 all of these occurances so someone wanting to go on a bug hunt will be able to
 easily see which areas of the code need more love.
-
-    C++ Style Comments
-    TODO: This code clearly needs more work or further review.
-    BUG: This code is definitely wrong. It needs fixed.
-    HACK: This code shouldn't be written this way or I don't feel right about it. There may a better solution.
-    WARNING: Think twice (or more times) before changing this code. I put this here for a good reason.
-    NOTE: This comment is much more important than lesser comments.
 
 libembroidery is written in C and adheres to C89 standards. This means
 that any C99 or C++ comments will show up as errors when compiling with
@@ -4186,7 +4183,8 @@ If you have found our software useful, please consider funding further developme
 \section{Embroidermodder Project Coding Standards}
 
 Rather than maintain our own standard for style, please defer to
-the Python's PEP 7 \citep{pep7} for C style and emulating that in C++.
+the Python's PEP 7 %\citep{pep7}
+for C style and emulating that in C++.
 
 A basic set of guidelines to use when submitting code. Defer to the PEP7 standard with the following additions:
 
@@ -4581,7 +4579,7 @@ See the bindings section for how this is achieved.
 Ideas
 =====
 
-Janome free designs \citep{janomeFreeDesigns}
+Janome free designs %\citep{janomeFreeDesigns}
 Useful for checking conversion accuracy, since we know they'll conform to the
 Janome .jef file type correctly.
 
