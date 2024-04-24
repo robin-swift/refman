@@ -14,6 +14,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # CUSTOM_DOMAIN: optionaldomain.com
           CONFIG_FILE: mkdocs.yml
-          EXTRA_PACKAGES: build-base bibtex
+          EXTRA_PACKAGES: build-base mkdocs-bibtex
           # GITHUB_DOMAIN: github.myenterprise.com
           REQUIREMENTS: requirements.txt
