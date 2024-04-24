@@ -8,10 +8,10 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
-      - name: Compile LaTeX document
-        uses: dante-ev/latex-action@latest
-        with:
-          root_file: emrm.tex
+      - name: Deps
+        run: bash scripts/deps.sh
+      - name: Build
+        run: bash scripts/build.sh
       - uses: actions/upload-artifact@v4
         with:
           name: refman
