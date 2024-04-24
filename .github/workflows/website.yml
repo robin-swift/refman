@@ -1,19 +1,33 @@
-name: Build Website
+name: Deploy website
 
-on: [push]
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  build_latex:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Git repository
-        uses: actions/checkout@v2
-      - name: Deploy MkDocs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@1.26
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # CUSTOM_DOMAIN: optionaldomain.com
-          CONFIG_FILE: mkdocs.yml
-          EXTRA_PACKAGES: build-base mkdocs-bibtex
-          # GITHUB_DOMAIN: github.myenterprise.com
-          REQUIREMENTS: requirements.txt
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Build
+        run: bash scripts/build.sh
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

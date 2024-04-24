@@ -22,3 +22,5 @@ On Ubuntu, this line should get the necessary packages (FIX THIS):
 ## Experimental Build
 
 https://pypi.org/project/mkdocs-bibtex/
+
+https://github.com/orzih/mkdocs-with-pdf

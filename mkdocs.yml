@@ -1,7 +1,14 @@
 site_name: Embroidermodder Reference Manual
+site_description: The design, analysis and rationale of all Embroidermodder projects
+copyright: Copyright (C) 2013-2024 The Embroidermodder Team
+site_url: https://www.libembroidery.org/docs
+repo_url: https://github.com/Embroidermodder/refman/
 nav:
-  - Home: example.md
+  - Home: index.md
   - About: about.md
+  - To Do: todo.md
+theme:
+  name: material
 plugins:
   - search
   - bibtex:
