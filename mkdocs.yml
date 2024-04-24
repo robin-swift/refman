@@ -1,0 +1,4 @@
+site_name: Embroidermodder Reference Manual
+nav:
+  - Home: example.md
+  - About: about.md
