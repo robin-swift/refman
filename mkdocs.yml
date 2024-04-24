@@ -2,3 +2,9 @@ site_name: Embroidermodder Reference Manual
 nav:
   - Home: example.md
   - About: about.md
+plugins:
+  - search
+  - bibtex:
+      bib_file: "references.bib"
+markdown_extensions:
+  - footnotes
