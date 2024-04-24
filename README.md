@@ -18,3 +18,7 @@ to clean up files after the build process run:
 On Ubuntu, this line should get the necessary packages (FIX THIS):
 
     $ sudo apt install texlive texlive-latex-base latexmk
+
+## Experimental Build
+
+https://pypi.org/project/mkdocs-bibtex/
