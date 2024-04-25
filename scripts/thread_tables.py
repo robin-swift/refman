@@ -35,8 +35,8 @@ thread_tables = [
 ]
 
 for table in thread_tables:
-    fname = "../_data/"+table[0]+"_colors.csv"
-    outfname = "tables/"+table[0]+"_colors.tex"
+    fname = "docs/data/"+table[0]+"_colors.csv"
+    outfname = "latex/tables/"+table[0]+"_colors.tex"
     file = open(fname, "r", newline='')
     out_file = open(outfname, "w")
     data = csv.reader(file)
